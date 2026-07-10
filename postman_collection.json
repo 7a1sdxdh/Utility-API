@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "utility-api",
+    "description": "Discord 봇 및 다른 프로젝트에서 공통으로 사용하는 Utility API 서버의 Postman Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "URL 상태 확인",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/url?url=https://example.com",
+          "host": ["{{baseUrl}}"],
+          "path": ["url"],
+          "query": [{ "key": "url", "value": "https://example.com" }]
+        }
+      }
+    },
+    {
+      "name": "IP 정보 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ip?ip=8.8.8.8",
+          "host": ["{{baseUrl}}"],
+          "path": ["ip"],
+          "query": [{ "key": "ip", "value": "8.8.8.8" }]
+        }
+      }
+    },
+    {
+      "name": "DNS 레코드 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/dns?domain=google.com",
+          "host": ["{{baseUrl}}"],
+          "path": ["dns"],
+          "query": [{ "key": "domain", "value": "google.com" }]
+        }
+      }
+    },
+    {
+      "name": "SSL 인증서 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ssl?domain=google.com",
+          "host": ["{{baseUrl}}"],
+          "path": ["ssl"],
+          "query": [{ "key": "domain", "value": "google.com" }]
+        }
+      }
+    },
+    {
+      "name": "웹페이지 메타데이터 조회",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/meta?url=https://example.com",
+          "host": ["{{baseUrl}}"],
+          "path": ["meta"],
+          "query": [{ "key": "url", "value": "https://example.com" }]
+        }
+      }
+    },
+    {
+      "name": "HTTP 상태 코드 설명",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/http-status?code=404",
+          "host": ["{{baseUrl}}"],
+          "path": ["http-status"],
+          "query": [{ "key": "code", "value": "404" }]
+        }
+      }
+    },
+    {
+      "name": "잘못된 요청 예시 (url 누락)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/url",
+          "host": ["{{baseUrl}}"],
+          "path": ["url"]
+        }
+      }
+    }
+  ]
+}
